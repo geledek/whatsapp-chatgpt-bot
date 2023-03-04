@@ -16,12 +16,15 @@ To run this project, you will need to have the following installed on your local
 2. Navigate to the project directory: `cd whatsapp-chatgpt-bot`
 3. Install project dependencies: `npm install`
 4. Copy your OpenAI API Key to `.env` file.
-5. Start the service: `node index.js`
-6. Scan the output QR code using Whatsapp Business App.
+
+
+TODO: optional for AWS EC2 deploymenet
 
 ## Usage
 
-To run the project, use the following command: `node {main file name}`
+To run the project, use the following command: `node index.js`
+Register a Whatsapp business account using any mobile number, scan the output QR code using Whatsapp Business App.
+When talking to the business account, add `!` before the message to trigger ChatGPT.
 
 ## Contributing
 
@@ -35,4 +38,4 @@ If you would like to contribute to this project, please follow these steps:
 
 ## License
 
-This project is licensed under the {license name}. See the [LICENSE.md](notion://www.notion.so/LICENSE.md) file for details.
+This project is licensed under the MIT Liense. See the [LICENSE.md](notion://www.notion.so/LICENSE.md) file for details.
