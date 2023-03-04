@@ -13,8 +13,11 @@ To run this project, you will need to have the following installed on your local
 ## Installation
 
 1. Clone this repository to your local machine: `git clone {repository URL}`
-2. Navigate to the project directory: `cd {project directory}`
+2. Navigate to the project directory: `cd whatsapp-chatgpt-bot`
 3. Install project dependencies: `npm install`
+4. Copy your OpenAI API Key to `.env` file.
+5. Start the service: `node index.js`
+6. Scan the output QR code using Whatsapp Business App.
 
 ## Usage
 
