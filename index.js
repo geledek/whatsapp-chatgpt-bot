@@ -1,6 +1,8 @@
 const { Client } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 const { Configuration, OpenAIApi } = require("openai");
+const { toChatML, get_message } = require("gpt-to-chatgpt")
+
 require('dotenv').config()
 
 const client = new Client();
@@ -20,15 +22,6 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-async function runCompletion (message) {
-    const completion = await openai.createCompletion({
-        model: "gpt-3.5-turbo",
-        prompt: message,
-        max_tokens: 200,
-    });
-    return completion.data.choices[0].text;
-}
-
 client.on('message', message => {
     console.log(message.body);
 
@@ -38,10 +31,9 @@ client.on('message', message => {
 });
 
 async function runCompletion (message) {
-    const completion = await openai.createCompletion({
+    const completion = await openai.createChatCompletion({
         model: "gpt-3.5-turbo",
-        prompt: message,
-        max_tokens: 200,
+        messages: toChatML(message)
     });
-    return completion.data.choices[0].text;
+    return get_message(completion.data);
 }
